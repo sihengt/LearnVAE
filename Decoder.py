@@ -1,7 +1,7 @@
 import torch
 
 class Decoder(torch.nn.Module):
-    def __init__(self, latent_dim, output_dim):
+    def __init__(self, latent_dim):
         super(Decoder, self).__init__()
         self.fc1 = torch.nn.Linear(latent_dim, 256)
         self.fc2 = torch.nn.Linear(256, 64 * 7 * 7)

@@ -15,7 +15,7 @@ class VAE(torch.nn.Module):
 
     def forward(self, x):
         z_mean, z_logvar = self.encoder(x)
-        z = reparameterize(z_mean, z_logvar)
+        z = self.reparameterize(z_mean, z_logvar)
         x_reconstructed = self.decoder(z)
         return x_reconstructed, z_mean, z_logvar
 
